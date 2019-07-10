@@ -1,0 +1,27 @@
+{
+  "name": "make-it-short",
+  "version": "1.0.0",
+  "description": "App that makes url shorter.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": ["url", "url-shortener", "make-it-short"],
+  "author": {
+    "name": "Abdun Nahid",
+    "email": "abdun.nahid@gmail.com",
+    "url": "https://twitter.com/abdunnahid"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.4",
+    "shortid": "^2.2.14",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

@@ -1,0 +1,6 @@
+POST http://localhost:3000/makeitshort
+Content-Type: application/json
+
+{
+    "longUrl": "https://www.amazon.com/Key-Apparel-High-Back-Zipper-Overall/dp/B0057X86YM/ref=pd_sbs_309_4/131-8647243-0766210?_encoding=UTF8&pd_rd_i=B0057X86YM&pd_rd_r=8239caf0-a2d5-11e9-ae3b-b73822b38340&pd_rd_w=QSH3y&pd_rd_wg=qxVvZ&pf_rd_p=588939de-d3f8-42f1-a3d8-d556eae5797d&pf_rd_r=HFBSCFMB0QA12FAT4Q67&refRID=HFBSCFMB0QA12FAT4Q67"
+}

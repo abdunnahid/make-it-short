@@ -1,2 +1,2 @@
 # make-it-short
-App that make make the url shorter.
+App that makes the url shorter.
