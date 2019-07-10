@@ -20,23 +20,118 @@
 
     <title>MakeItShort - URL Shortener</title>
     <link rel="stylesheet" href="modern-normalize.css">
+    <link rel="stylesheet" href="mtrl-buttons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <h1>Make It Short</h1>
+            <!-- <h1><img src="./assets/fav.svg"> makeITshort</h1> -->
+            <h1></h1>
         </nav>
     </header>
     <main>
-        <h3>Main</h3>
+        <section>
+            <h1><img src="./assets/fav.svg"> makeITshort</h1>
+
+            <div class="input-wrapper">
+                <input id="url-input" type="url" name="url" required placeholder="Shorten your link"
+                    onfocus="onInputFocus()" onBlur="onInputBlur()">
+            </div>
+            <div class="btn-wrapper">
+                <button type="submit"
+                    class="mtrl-btn mtrl-mini-round mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke"
+                    onclick="makeItShort()">
+                    Shorten Link
+                </button>
+            </div>
+
+            <div class="short-link-wrapper">
+                <a id="short-url" class="short-link mtrl-btn mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke" target="_blank" href="">
+                    Shortened link will appear here
+                </a>
+                <button
+                    class="mtrl-btn mtrl-full-round mtrl-icon-circle mtrl-shadow mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke" onclick="copyLink()">
+                    <i class="material-icons">file_copy</i>
+                </button>
+            </div>
+
+        </section>
     </main>
-    <footer>
-        <h3>Footer</h3>
+    <footer class="footer">
+
+        <div class="footer-container">
+            <!-- <div class="buy-me-a-coffee footer-section">
+                <h2>Buy Me A Coffee</h2>
+                <div class="cover-img-container">
+                    <img src="assets/coffee.svg" alt="buy me a coffee" class="cover-svg">
+                </div>
+                <a class="mtrl-btn mtrl-full-round mtrl-shadow mtrl-primary-accent-gradiant-stroke mtrl-btn-ripple"
+                    href="https://www.buymeacoffee.com/nahid" target="_blank">
+                    <img src="assets/coffee_mug.png" alt="buy me a coffee"> &nbsp; Buy Me A Coffee
+                </a>
+            </div> -->
+
+            <div class="hire-me footer-section">
+                <h2>Hire Me</h2>
+                <div class="cover-img-container">
+                    <img src="assets/hire.svg" alt="buy me a coffee" class="cover-svg">
+                </div>
+                <a class="mtrl-btn mtrl-full-round mtrl-shadow mtrl-primary-accent-gradiant-stroke mtrl-btn-ripple"
+                    href="https://www.linkedin.com/in/abdunnahid/" target="_blank">
+                    Hire Me
+                </a>
+            </div>
+
+            <!-- <div class="say-something footer-section">
+                <h2>Say Something</h2>
+                <div class="cover-img-container">
+                    <img src="assets/message.svg" alt="buy me a coffee" class="cover-svg">
+                </div>
+                <a class="mtrl-btn mtrl-full-round mtrl-shadow mtrl-primary-accent-gradiant-stroke mtrl-btn-ripple"
+                    onclick="toggleSaySomething()">
+                    Say Something
+                </a>
+            </div> -->
+
+            <div class="follow-me footer-section">
+                <h2>Follow Me</h2>
+                <div class="cover-img-container">
+                    <img src="assets/social.svg" alt="buy me a coffee" class="cover-svg">
+                </div>
+                <div>
+                    <a class="mtrl-btn mtrl-icon-circle mtrl-shadow mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke"
+                        href="https://www.linkedin.com/in/abdunnahid" target="_blank">
+                        <img src="assets/linkedin.png" alt="linkedin icon">
+                    </a>
+                    <a class="mtrl-btn mtrl-icon-circle mtrl-shadow mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke"
+                        href="https://github.com/abdunnahid" target="_blank">
+                        <img src="assets/github.png" alt="github icon">
+                    </a>
+                    <a class="mtrl-btn mtrl-icon-circle mtrl-shadow mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke"
+                        href="https://twitter.com/abdunnahid" target="_blank">
+                        <img src="assets/twitter.png" alt="twitter icon">
+                    </a>
+                    <a class="mtrl-btn mtrl-icon-circle mtrl-shadow mtrl-btn-ripple mtrl-primary-accent-gradiant-stroke"
+                        href="https://www.instagram.com/abdunnahid" target="_blank">
+                        <img src="assets/insta.png" alt="instagram icon">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <p class="creator">Created By <a href="https://twitter.com/abdunnahid" target="_blank">@abdunnahid</a>
+        </p>
+
     </footer>
 
     <script src="./app.js"></script>
+    <script src="./mtrl-buttons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+        integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
 </body>
 
 </html>

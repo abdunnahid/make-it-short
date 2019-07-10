@@ -8,6 +8,7 @@ const Url = require('../models/url');
 router.post('/makeitshort', async (req, res) => {
 
     const { longUrl } = req.body;
+
     const baseUrl = config.get('baseUrl');
 
     if (!validUrl.isUri(longUrl)) {
@@ -15,7 +16,11 @@ router.post('/makeitshort', async (req, res) => {
     }
 
     try {
-        let url = await Url.findOne({ longUrl });
+
+        let url = await Url.findOne({
+            longUrl
+        });
+
         if (url) {
             return res.json(url);
         }
@@ -31,6 +36,7 @@ router.post('/makeitshort', async (req, res) => {
         })
 
         await url.save();
+        console.log("TCL: url", url)
         return res.json(url);
 
     } catch (error) {
@@ -41,7 +47,9 @@ router.post('/makeitshort', async (req, res) => {
 
 router.get('/:code', async (req, res) => {
     try {
-        const url = await Url.findOne({urlCode: req.params.code});
+        const url = await Url.findOne({
+            urlCode: req.params.code
+        });
         if (!url) {
             return res.status(404).json('No url found');
         }
