@@ -1,5 +1,4 @@
 {
     "baseUrl":      "http://localhost:3000",
-    "mongoDB":      "makeitshort",
-    "server":       "localhost"
+    "mongoDB":      "mongodb://localhost/makeitshort"
 }

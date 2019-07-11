@@ -4,13 +4,19 @@ const app = express();
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
+const config = require('config');
+
+if (!config.get('mongoDB')) {
+    console.error('FATAL ERROR: MongoDB not defind!');
+    process.exit(1);
+}
 
 require('./db');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-//enables cors
+//Enabling cors
 app.use(cors({
     'allowedHeaders': ['sessionId', 'Content-Type'],
     'exposedHeaders': ['sessionId'],

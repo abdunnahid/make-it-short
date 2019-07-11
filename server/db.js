@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('config');
 
-const server = config.get('server');
 const database = config.get('mongoDB');
 
 class Database {
@@ -11,7 +10,7 @@ class Database {
     }
 
     _connect() {
-        mongoose.connect(`mongodb://${server}/${database}`, {
+        mongoose.connect(database, {
                 useCreateIndex: true,
                 useNewUrlParser: true
             })

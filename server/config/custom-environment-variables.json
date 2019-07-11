@@ -1,0 +1,4 @@
+{
+    "baseUrl":      "makeitshort_baseurl",
+    "mongoDB":      "makeitshort_mongoDB_connection_string"
+}

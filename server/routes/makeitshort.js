@@ -8,11 +8,10 @@ const Url = require('../models/url');
 router.post('/makeitshort', async (req, res) => {
 
     const { longUrl } = req.body;
-
     const baseUrl = config.get('baseUrl');
 
     if (!validUrl.isUri(longUrl)) {
-        return res.status(401).json('Invalid Url.');
+        return res.status(422).json('Invalid Url.');
     }
 
     try {
@@ -36,7 +35,6 @@ router.post('/makeitshort', async (req, res) => {
         })
 
         await url.save();
-        console.log("TCL: url", url)
         return res.json(url);
 
     } catch (error) {
