@@ -14,9 +14,12 @@ async function makeItShort() {
         showError("Please type a valid url");
     }
 
+    showShortUrl("Loading...");
+
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/makeitshort',
+        url: 'http://localhost:3000/makeitshort',                // Local Dev Server
+        // url: 'https://makeitshort-url.herokuapp.com/makeitshort',   // Remote Server
         crossDomain: true,
         data: {
             longUrl
