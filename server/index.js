@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const cors = require('cors');
+const helmet = require('helmet');
+const compression = require('compression');
 
 require('./db');
 app.use(bodyParser.urlencoded({
@@ -22,6 +24,9 @@ app.use(express.json({
 }));
 
 app.use('/', require('./routes/makeitshort'));
+
+app.use(helmet());
+app.use(compression());
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
